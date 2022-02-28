@@ -8,7 +8,7 @@ function maxOfTwoNumbers(number1, number2) {
 
 //Exercise 2- Landscape or Portrait
 
-console.log(`Exervice #2: ${isLandscape(252, 300)} \n`);
+console.log(`Exervise #2: ${isLandscape(252, 300)} \n`);
 
 function isLandscape(width, height) {
     return (width > height);
@@ -22,7 +22,7 @@ function isLandscape(width, height) {
 // Not a number => 'Not a number'
 
 const output = fizzBuzz(15);
-console.log(output);
+console.log(`Exercise #3: ${output} \n`);
 
 function fizzBuzz(input) {
     if (typeof (input) !== 'number')
@@ -40,3 +40,27 @@ function fizzBuzz(input) {
     else
         return input
 }
+
+//Exercise 4- Demerit Points
+// speed limit = 70
+// 5 -> 1 point
+// Math.floor(1.3)
+// 12 points -> suspended 
+
+console.log(`Exercise #4: ${checkSpeed(92)} \n`);
+
+function checkSpeed(speed) {
+    const speedLimit = 70;
+    const kmPerPoint = 5;
+
+    if (speed < speedLimit + kmPerPoint)
+        return `Ok`;
+
+    let points = Math.floor((speed - speedLimit) / kmPerPoint);
+
+    if (points >= 12)
+        return `Points:  ${points} License suspended!`;
+
+    return `Points:  ${points}`;
+}
+
