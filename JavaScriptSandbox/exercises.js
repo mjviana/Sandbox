@@ -91,3 +91,37 @@ function countTruthy(array) {
   }
   return numberOfTruthy;
 }
+
+//Exercise 7- String Properties
+console.log("\nExercise #7 \n");
+
+const movie = {
+  title: "The Batman",
+  releaseYear: 2022,
+  rating: 4.5,
+  director: "Matt Reeves",
+};
+
+showProperties(movie);
+
+function showProperties(obj) {
+  for (const key in obj) {
+    if (typeof obj[key] === "string") {
+      console.log(`${key}: ${obj[key]}`);
+    }
+  }
+}
+
+//Exercise 8- Sum of Multiples of 3 and 5
+console.log("\nExercise #8\n");
+
+console.log(sum(10));
+
+function sum(limit) {
+  let sum = 0;
+
+  for (let i = 1; i <= limit; i++) {
+    if (i % 3 === 0 || i % 5 === 0) sum += i;
+  }
+  return sum;
+}
