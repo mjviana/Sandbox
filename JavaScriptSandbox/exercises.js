@@ -125,3 +125,74 @@ function sum(limit) {
   }
   return sum;
 }
+
+//Exercise 9- Grade
+// 1-59: F
+// 60-69:D
+// 70-79:C
+//80-89: B
+// 90-100: A
+
+console.log("\n Exercise #9\n");
+
+const marks = [80, 80, 50];
+
+console.log(calculateGrade(marks));
+
+function calculateGrade(marks) {
+  average = calculateAverage(marks);
+
+  if (average < 70) return "D";
+  if (average < 80) return "C";
+  if (average < 90) return "B";
+  if (average < 100) return "A";
+  return "F";
+}
+
+function calculateAverage(array) {
+  let sum = 0;
+  for (const value of array) sum += value;
+
+  return sum / array.length;
+}
+
+//Exercise 10- Stars
+console.log("\nExercise #10\n");
+
+showStars(10);
+
+function showStars(rows) {
+  for (let i = 0; i < rows; i++) {
+    let stars = "";
+    for (let j = 0; j <= i; j++) {
+      stars += "*";
+    }
+    console.log(stars);
+  }
+}
+
+//20- Exercise- Prime Numbers
+// Prime (whose factors are only 1 and itself)
+// Composite
+// 12 = 1, 2, 3, 4, 6, 12
+// Can be divided evenly by its factors
+// 11 = 1, 11
+// 13 = 1, 13
+
+console.log("\nExercise #11\n");
+
+showPrimes(20);
+
+function showPrimes(limit) {
+  for (let i = 2; i <= limit; i++) {
+    let isPrime = true;
+    for (let j = 2; j < i; j++) {
+      if (i % j === 0) {
+        isPrime = false;
+        break;
+      }
+    }
+
+    if (isPrime) console.log(i);
+  }
+}
