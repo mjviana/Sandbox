@@ -6,15 +6,12 @@ namespace DatetimeTest
     {
         static void Main(string[] args)
         {
-            var datetime = DateTime.Now;
-            var datetimeUtc = DateTime.UtcNow;
-            var datetimeOffset = DateTimeOffset.Now;
-            var datetimeOffsetUtc = DateTimeOffset.UtcNow;
-            Console.WriteLine("datetime: " + datetime);
-            Console.WriteLine("datetimeUtc: " + datetimeUtc);
-            Console.WriteLine("datetimeOffset: " + datetimeOffset);
-            Console.WriteLine("datetimeOffsetUtc: " + datetimeOffsetUtc);
-            Console.ReadLine();
+            Console.WriteLine("Number of days, please insert a initial date:");
+            DateTime initialDate = DateTime.Parse(Console.ReadLine());
+
+            System.Console.WriteLine(initialDate);
+            var daysPassed = (DateTime.Now - initialDate).TotalDays;
+            System.Console.WriteLine($"Number of days: {daysPassed}");
         }
     }
 }
