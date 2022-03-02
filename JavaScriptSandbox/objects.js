@@ -42,3 +42,18 @@ circle1.draw();
 const circle2 = createCircle(2, location2, false);
 console.log(`\ncircle #2: \n`, circle2);
 circle2.draw();
+
+// Constructor Functions
+function Circle(radius, location, isVisible) {
+    this.radius = radius;
+    this.location = location;
+    this.isVisible = isVisible;
+    this.draw = function () {
+        console.log('Draw');
+    }
+}
+
+const circle3 = new Circle(3, location = { x: 3, y: 4 }, true);
+
+console.log(`\n circle #3: \n`, circle3);
+circle3.draw();
