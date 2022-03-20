@@ -210,3 +210,149 @@ const newWay = [...array1, "a", ...array2, `b`];
 console.log(`new array:`, newWay);
 
 const copy = [...newWay];
+
+// Iterating an Array
+console.log(`\nIterating an array`);
+const values = [1, 2, 3, 4];
+
+// one way
+for (let number of values) {
+  console.log(number);
+}
+
+// another way
+values.forEach(function (element) {
+  console.log(element);
+});
+
+// another way
+values.forEach((element) => {
+  console.log(element);
+});
+
+// another way
+values.forEach((element, index) => {
+  console.log(element, index);
+});
+
+// joining arrays
+const aBunchOfNumbers = [1, 2, 3, 4];
+const joined = aBunchOfNumbers.join(",");
+
+const message = "This is my first message";
+
+const words = message.split(" ");
+
+console.log(`a bunch of numbers after joined:  ${joined}`);
+console.log(`array of words:`, words);
+
+const newMessage = words.join("-");
+console.log(`New message ${newMessage}`);
+
+// Sorting Arrays
+console.log(`\nSorting arrays`);
+const unsortedArray = [2, 3, 1];
+
+console.log("Before sort:", unsortedArray);
+unsortedArray.sort();
+console.log("After sort:", unsortedArray);
+unsortedArray.reverse();
+console.log("After reverse:", unsortedArray);
+
+const programmingLanguages = [
+  {
+    id: 1,
+    name: "Kotlin",
+  },
+  {
+    id: 2,
+    name: "JavaScript",
+  },
+];
+
+console.log(
+  "Before sorting array of programming languages:",
+  programmingLanguages
+);
+programmingLanguages.sort(function (a, b) {
+  // a< b => -1
+  // a> b =>1
+  // a===b =>0
+
+  const nameA = a.name.toLowerCase();
+  const nameB = b.name.toLowerCase();
+
+  if (nameA < nameB) return -1;
+  if (nameA > nameB) return 1;
+  return 0;
+});
+
+console.log(
+  "After sorting array of programming languages:",
+  programmingLanguages
+);
+
+// Testing the Elements of an Array
+console.log(`\nTesting the Elements of an Array`);
+const testNumbers = [1, 2, 3, 4, -5, 5];
+
+// all elements should be... (every)
+const allPosivite = testNumbers.every(function (value) {
+  return value >= 0;
+});
+
+// at least one element (some)
+const atLeastOne = testNumbers.some(function (value) {
+  return value >= 0;
+});
+
+console.log(allPosivite);
+console.log(atLeastOne);
+
+// Filtering an Array
+console.log(`\nFiltering an Array`);
+const arrayToFilter = [2, 3, -4, 5, -7, 8, 99, -122];
+
+const filteredArrays = arrayToFilter.filter((n) => n >= 0);
+
+console.log(filteredArrays);
+
+// Mapping an array
+console.log(`\nMapping an array`);
+
+const mappedItems = filteredArrays.map((n) => "<li>" + n + "</li>");
+console.log(mappedItems);
+
+const html = "<ul>" + mappedItems.join("") + "</ul>";
+console.log(html);
+
+const numbersToMapAndFilter = [1, -1, 2, 3];
+const items = numbersToMapAndFilter
+  .filter((n) => n >= 0)
+  .map((n) => ({ value: n }))
+  .filter((obj) => obj.value > 1)
+  .map((obj) => obj.value);
+
+console.log(items);
+
+// Reducing an Array
+console.log("\nRecuding an array");
+
+const newArrayNumbers = [1, -1, 2, 3];
+let sum = 0;
+
+for (let n of newArrayNumbers) {
+  sum += n;
+}
+console.log(sum);
+
+const resultSum = newArrayNumbers.reduce((accumalator, currentValue) => {
+  return accumalator + currentValue;
+}, 0);
+
+// if you do not set an initial value (second argument), by default the acummulator it will start with the value from the first element in the array
+const resultSum2 = newArrayNumbers.reduce(
+  (accumalator, currentValue) => accumalator + currentValue
+);
+console.log(resultSum);
+console.log(resultSum2);
