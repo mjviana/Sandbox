@@ -199,3 +199,14 @@ console.log(
   `Value of array of combined objects and numbers after changes (reference type vs value type):`,
   combinedv2
 );
+
+// The Spread Operator (new way to concat array in es6)
+console.log(`\nThe Spread Operator (new way to concat array in es6)`);
+const array1 = [1, 2, 3];
+const array2 = [4, 5, 6];
+
+const newWay = [...array1, "a", ...array2, `b`];
+
+console.log(`new array:`, newWay);
+
+const copy = [...newWay];
