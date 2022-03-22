@@ -94,22 +94,29 @@ function countOccurencesWithReduceMethod1(array, searchElement) {
 
 // Exercise 6- Get Max
 console.log('\n Exercise 6- Get Max');
-const arrayToCheckMaxNumber = [1,2,3,4,5];
+const arrayToCheckMaxNumber = [9, 2, 3, 4, 10, 12, 55, 112];
 
 const max = getMax(arrayToCheckMaxNumber);
-// const maxReduceWay = getMaxReduceWay(arrayToCheckMaxNumber);
+const maxReduceWay = getMaxReduceWay(arrayToCheckMaxNumber);
 
 console.log(max);
+console.log(maxReduceWay);
 
 // simple way
-function getMax(array){
-let max = array[0];
+function getMax(array) {
+  let max = array[0];
 
-for (const element of array) {
-  if(element > max)
-  max = element;
-}
-return max;
+  for (const element of array) {
+    if (element > max)
+      max = element;
+  }
+  return max;
 }
 
 // reduce way
+function getMaxReduceWay(array) {
+ return  array.reduce((max, currentValue) => {
+    console.log(`max ${max}, currentValue ${currentValue}`);
+    return (max > currentValue)? max: currentValue;
+  });
+}
