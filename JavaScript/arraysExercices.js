@@ -1,4 +1,5 @@
 // Exercise 1- Array from Range
+console.log('\nExercise 1- Array from Range');
 const numbers = arrayFromRange(-10, 4);
 console.log(numbers);
 
@@ -9,6 +10,7 @@ function arrayFromRange(min, max) {
 }
 
 // Exercise 2- Includes
+console.log('\nExercise 2- Includes')
 const includesArray = [1, 2, 3, 4];
 
 console.log(includes(includesArray, 11));
@@ -18,6 +20,7 @@ function includes(array, searchElement) {
 }
 
 // Exercise 3- Except
+console.log('\nExercise 3- Except');
 const exceptArray = [1, 2, 3, 4, 1, 2];
 
 const output = except(exceptArray, [1, 2]);
@@ -35,6 +38,7 @@ function except(array, excluded) {
 }
 
 // Exercise 4- Moving an Element
+console.log('\nExercise 4- Moving an Element');
 const movingArray = [1, 2, 3, 4];
 console.log("Array to move", movingArray);
 
@@ -58,6 +62,7 @@ function move(array, index, offset) {
 }
 
 // Exercise 5- Count Occurrences
+console.log('\nExercise 5- Count Occurrences')
 const arrayCountOccurences = [1, 2, 3, 4, 5, 2, 2, 2];
 
 const occurances = countOccurences(arrayCountOccurences, 2);
@@ -65,14 +70,9 @@ const occurancesWithReduceMethod1 = countOccurencesWithReduceMethod1(
   arrayCountOccurences,
   2
 );
-const occurancesWithReduceMethod2 = countOccurencesWithReduceMethod2(
-  arrayCountOccurences,
-  2
-);
 
 console.log(occurances);
 console.log(occurancesWithReduceMethod1);
-console.log(occurancesWithReduceMethod2);
 
 function countOccurences(array, searchElement) {
   let output = 0;
@@ -91,11 +91,25 @@ function countOccurencesWithReduceMethod1(array, searchElement) {
   return output;
 }
 
-function countOccurencesWithReduceMethod2(array, searchElement) {
-  const output = array.reduce((accumulator, currentValue) => {
-    console.log(accumulator, currentValue, searchElement);
-    if (currentValue === searchElement) accumulator++;
-    return accumulator;
-  }, 0);
-  return output;
+
+// Exercise 6- Get Max
+console.log('\n Exercise 6- Get Max');
+const arrayToCheckMaxNumber = [1,2,3,4,5];
+
+const max = getMax(arrayToCheckMaxNumber);
+// const maxReduceWay = getMaxReduceWay(arrayToCheckMaxNumber);
+
+console.log(max);
+
+// simple way
+function getMax(array){
+let max = array[0];
+
+for (const element of array) {
+  if(element > max)
+  max = element;
 }
+return max;
+}
+
+// reduce way
