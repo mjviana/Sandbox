@@ -93,4 +93,71 @@ try {
   console.log(e);
 }
 
-// Local vs Global Scope
+// Let vs Var
+console.log(`\nLet vs Var`)
+function start() {
+  for (var i = 0; i < 5; i++) {
+    if (true) {
+      var color = 'red';
+    }
+  }
+  console.log(i);
+}
+// var => function-scoped
+// ES6 (ES2015): let, const => block-scoped
+start();
+
+// The this Keyword
+console.log(`\n The this keyword`);
+// method -> obj
+// function -> global (window, global)
+
+const video = {
+  title: 'a',
+         
+  play() {
+   console.log(this);
+  }
+ };
+ video.stop = function() {
+  console.log(this);
+ };
+ video.stop();
+
+ function playVideo() {
+  console. log(this);
+}
+playVideo();
+
+function Video (title) {
+  this.title = title;
+  console. log(this);
+}
+const v = new Video ('b');
+
+const movie = {
+  title: 'a',
+  tags: ['a', 'b', 'c'],
+  showTags () {
+   this.tags.forEach (function(tag) {
+      console.log(this.title, tag);
+   }, this);
+  }
+};
+movie.showTags ();
+
+// Changing this
+console.log(`\nChanging this`);
+
+const film = { 
+  title: 'a',
+  tags: ['a', 'b', 'c'],
+  showTags () {
+    this.tags.forEach (tag => {
+      console.log(this.title, tag);
+    });
+  } 
+};
+film.showTags();
+
+
