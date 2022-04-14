@@ -1,6 +1,6 @@
 
 let version = "Version 1.4.55.9";
-let minimumVersion = "version 1.4.5.6.7";
+let minimumVersion = "";
 
 console.log("Version: ", version);
 console.log("Minimum Version: ", minimumVersion);
@@ -10,7 +10,7 @@ function isValidVersion() {
 
     let isValid = false;
 
-    if (minimumVersion != null && version != null) {
+    if (minimumVersion.trim() !== '' && version.trim() !== '') {
 
         let pattern = /(\d+(\.\d+)+)$/;
 
